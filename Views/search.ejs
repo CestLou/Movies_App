@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Search Results</title>
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+
+<body>
+<h1 align="center">Search Results For: <%= title %></h1>
+<h2>
+	
+	<% for (var i = 0; i < list.length; i++) { %>
+	<li>
+	<a href='/search/<%=list[i].imdbID %>'><%= list[i].Title %> (<%= list[i].Year %>) </a>
+	</li>
+	<% } %>
+	
+</h2>
+</body>
+</html>

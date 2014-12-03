@@ -1,0 +1,15 @@
+.left {
+	display:inline;
+	float: left;
+}
+h1 {
+	color:#4E74A6;
+	text-align:center;
+}
+body {
+	background-color:#A9B8FC;
+	font-family: Georgia;
+}
+.allText {
+	color:#6E665E;
+}
