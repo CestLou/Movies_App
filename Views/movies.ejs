@@ -1,18 +1,40 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="/style.css">
-</head>
-<body>
-<h1 class='header'>"<%= results['Title']%>"</h1>
-<div>
-<p class = 'allText'>Year: <%= results['Year'] %></p>
-<p class = 'allText'>Genre: <%= results['Genre'] %></p>
-<p class = 'allText'>Actors: <%= results['Actors']%></p>
-<p class = 'allText'>Rotten Tomatoes: <%= tomatoMeter%></p></body>
-<p class = 'allText'>Poster: <br /> <img src="<%= results['Poster']%>"></p>
+<%= include header %>
+
+<h1 class='header'>~<%= list['Title']%>~</h1>
+<div class='row container'>
+<div class='col-md-8'>
+<p class = 'allText'>Year: <%= list['Year'] %></p>
+<p class = 'allText'>Genre: <%= list['Genre'] %></p>
+<p class = 'allText'>Actors: <%= list['Actors']%></p>
+<p class = 'allText'>Rotten Tomatoes: <%= list['tomatoMeter']%></p></body>
+<p class = 'allText'>Plot Summary: <%= list['Plot'] %></p>
+<div display='inline'>
+<form action='/watchList' method='post'>
+<% if(movieFound === true){%>
+	<button class='btn btn-lg btn-warning' disabled>In Watch List</button>
+	<%} else {%>
+	<br />
+	<button class="btn btn-info addTo" data-title="<%=list['Title']%>" data-year="<%=list['Year']%>" data-imdb="<%=list['imdbID']%>" data-poster="<%=list['Poster']%>">Add To Watch List</button>
+	<%}%>
+
+	<br />
+	<br />
+	<!-- old code before transferring over to AJAX functionality
+	<input type='hidden' name='title' value='<%= list['Title']%>'>
+	<input type='hidden' name='year' value='<%= list['Year']%>'>
+	<input type='hidden' name='imdb_code' value='<%= list['imdbID']%>'>
+	<input type='hidden' name='poster' value='<%= list['Poster']%>'> -->
+</form>
 </div>
+</div>
+<div class='col-md-4'>
+<img src="<%= list['Poster']%>">
+</div>
+<div>
+
+
+
+
+
 </body>
 </html>

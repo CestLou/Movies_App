@@ -1,0 +1,32 @@
+<%= include header %>
+
+<h1>GIMME THOSE MOVIES I WANNA WATCH!</h1>
+
+<% for (var i = 0; i < toWatch.length; i++) { %>
+<span class='container bigger'>
+	<div class='col-md-8'>
+		Title:
+		<a href="/search/<%=toWatch[i].imdb_code%>"><%= toWatch[i].title %></a> <br />
+
+		
+		Release Year:
+		<%= toWatch[i].year %> <br />
+
+		imdbID:
+		<%= toWatch[i].imdb_code %> 
+		<br />
+		<button type='submit' class='btn btn-lg btn-danger deleteItem' data-id='<%=toWatch[i].id%>'>Remove</button>
+	</div>
+	<div class='col-md-4'>
+	<img src="<%= toWatch[i].poster%>">
+	</div>
+<div>
+&nbsp;	
+<hr>
+</div>
+</span>
+
+
+<% } %> 
+</body>
+</html>
