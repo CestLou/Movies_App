@@ -6,16 +6,21 @@
 <span class='container bigger'>
 	<div class='col-md-8'>
 		Title:
-		<a href="/search/<%=toWatch[i].imdb_code%>"><%= toWatch[i].title %></a> <br />
+		<a href="/search/<%=toWatch[i].imdbcode%>"><%= toWatch[i].title %></a> <br />
 
 		
 		Release Year:
 		<%= toWatch[i].year %> <br />
 
 		imdbID:
-		<%= toWatch[i].imdb_code %> 
+		<%= toWatch[i].imdbcode %> 
 		<br />
 		<button type='submit' class='btn btn-lg btn-danger deleteItem' data-id='<%=toWatch[i].id%>'>Remove</button>
+
+		<br />
+			<a href="/watchList/<%= toWatch[i].id %>/comments">
+			<button type="submit" class="btn btn-info">Comments</button>
+			</a>
 	</div>
 	<div class='col-md-4'>
 	<img src="<%= toWatch[i].poster%>">

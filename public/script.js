@@ -18,7 +18,7 @@ $(function() {
 		var theButton = $(this);
 		event.preventDefault();
 		var addThis = $(this);
-		$.post('/watchList', {title:addThis.data('title'), year:addThis.data('year'), imdb_code:addThis.data('imdb'), poster:addThis.data('poster')   },
+		$.post('/watchList', {title:addThis.data('title'), year:addThis.data('year'), imdbcode:addThis.data('imdb')},
 		function(data) {
 			theButton.fadeOut();
 	})
